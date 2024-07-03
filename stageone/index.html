@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tech Goals</title>
+    <style>
+        * {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    color: #333; 
+}
+
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 16.5px;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+header h1, footer p {
+    margin: 0;
+}
+
+main {
+    padding: 20px 0;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    margin-bottom: 10px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My Tech Goals for the Next <i>2</i> Years</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="slack-info">
+            <div class="container">
+                <h2>Personal Information</h2>
+                <p data-testid="slackDisplayName"><b>Roxandra</b></p>
+                <p data-testid="currentTimeUTC">Current Time (UTC)</p>
+                <p data-testid="currentDay">Current Day</p>
+                <p data-testid="slackEmail">favourezenwa596@gmail.com</p>
+                <img src="image.jpg" alt="Slack Profile Picture" data-testid="slackProfilePicture">
+            </div>
+        </section>
+
+        <section id="goals">
+            <div class="container">
+                <h2>Goals</h2>
+                <p>
+                   <b> Over the next 2 years, I aim to expand my technical expertise and explore<br>
+                     new areas in the field. In the first year, I will focus on solidifying my<br>
+                      foundation in frontend and backend development, data science, and analytics. <br>
+                      I plan to learn React, Node.js, and Python, and build personal projects to reinforce <br>
+                      my skills. Additionally, I will attend industry conferences and join online communities <br>
+                      to stay updated on industry trends and best practices.<br><br>
+
+                    In the second year, I will delve into artificial intelligence, machine learning, and cloud infrastructure.<br>
+                     I aim to learn TensorFlow or PyTorch, implement AI-powered projects, and explore cloud platforms like AWS or Azure.<br>
+                      I also aspire to take on leadership roles in personal projects and mentor others in areas where I have expertise.<br>
+
+                    Through these goals, I aim to enhance my technical skills, stay adaptable in the rapidly evolving tech landscape,<br>
+                     and contribute meaningfully to the industry.<br>
+                   </br></p>
+
+            </div>
+        </section>
+
+        <section id="links">
+            <div class="container">
+                <h2>Useful Links</h2>
+                <ul>
+                    <li><a href="https://hng.tech/learn" data-testid="hngLink">HNG Learn</a></li>
+                    <li><a href="https://keyword.dog" data-testid="keywordLink">Keyword Dog</a></li>
+                    <li><a href="https://scrapeanyweb.site" data-testid="scrapeanywebLink">Scrape Any Web</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Favour-Chukwudum</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Function to display current UTC time
+    function displayCurrentTime() {
+        const now = new Date();
+        const options = { weekday: 'long', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'UTC' };
+        const formattedTime = now.toLocaleDateString('en-US', options);
+        document.querySelector('[data-testid="currentTimeUTC"]').textContent = formattedTime;
+        
+        // Display current day of the week
+        document.querySelector('[data-testid="currentDay"]').textContent = now.toLocaleDateString('en-US', { weekday: 'long' });
+    }
+
+    // Call the function immediately and every 1 second to keep time updated
+    displayCurrentTime();
+    setInterval(displayCurrentTime, 1000);
+});
+    </script>
+</body>
+</html>
